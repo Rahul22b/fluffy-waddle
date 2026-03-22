@@ -1,0 +1,12 @@
+name : my custom workflow
+on: [workflow_dispatch]
+jobs:
+    job1:
+        runs-on: ubuntu-latest
+        steps:
+            - name: step1
+              run: echo "hello world"
+            - name: what_is_the_ram_size
+              run: systeminfo | grep "Memory"
+            - name: what_is_the_cpu
+                run: systeminfo | grep "Processor"
