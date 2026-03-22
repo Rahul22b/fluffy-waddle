@@ -13,3 +13,9 @@ jobs:
 
       - name: what_is_the_cpu
         run: lscpu | grep "Model name"
+      - name: check_cpu_count
+        run: |
+          echo "Total Cores:"
+          nproc
+          echo "Detailed CPU Info:"
+          lscpu | grep -E '^Thread\(s\) per core|^Core\(s\) per socket|^CPU\(s\):'
